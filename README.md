@@ -1,4 +1,6 @@
-# JiBaBoom -- Edited in .... Alwin/branching
+# JiBaBoom
+
+(Pair Programming Project)
 
 ## Names:
 
