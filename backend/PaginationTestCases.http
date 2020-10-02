@@ -1,0 +1,66 @@
+### VALID INSERT ###
+
+POST http://localhost:3000/basic/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 5550000000,
+        "availabilityId": 5500000001,
+        "participantId": 1100000008,
+        "startTime": "1000",
+        "endTime": "1100"
+        },
+
+        {
+        "meetingId": 5550000000,
+        "availabilityId": 5500000002,
+        "participantId": 1100000009,
+        "startTime": "1045",
+        "endTime": "1230"
+        },
+
+        {
+        "meetingId": 5550000000,
+        "availabilityId": 5500000003,
+        "participantId": 1100000010,
+        "startTime": "1030",
+        "endTime": "1200"
+        },
+
+        {
+        "meetingId": 5550000000,
+        "availabilityId": 5500000004,
+        "participantId": 1100000011,
+        "startTime": "1030",
+        "endTime": "1200"
+        },
+
+        {
+        "meetingId": 5550000000,
+        "availabilityId": 5500000005,
+        "participantId": 1100000012,
+        "startTime": "1020",
+        "endTime": "1500"
+        },
+
+        {
+        "meetingId": 5550000000,
+        "availabilityId": 5500000006,
+        "participantId": 1100000013,
+        "startTime": "1015",
+        "endTime": "1500"
+        },
+
+        {
+        "meetingId": 5550000000,
+        "availabilityId": 5500000007,
+        "participantId": 1100000014,
+        "startTime": "1600",
+        "endTime": "1700"
+        }
+    ]
+}
+
+##########################################################

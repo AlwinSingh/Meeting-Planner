@@ -1,0 +1,16 @@
+### EMPTY RESULT ###
+
+GET http://localhost:3000/basic/data?meetingId=8080808080 HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/basic/result?meetingId=5555555555 HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/advance/result?meetingId=5555555555&fromTime=1000&toTime=1200 HTTP/1.1
+Content-Type: application/json
+
+##########################################################

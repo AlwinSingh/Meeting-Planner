@@ -1,0 +1,150 @@
+### INVALID ADVANCE INSERT ###
+### SEND REQUEST TWICE FOR DUPLICATE ENTRY ERROR
+
+//Invalid Meeting ID
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 555000000,
+        "unavailabilityId": 5500000001,
+        "participantId": 1100000008,
+        "startTime": "1000",
+        "endTime": "1100"
+        }
+    ]
+}
+
+####
+//Invalid unavailability ID
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 5550000000,
+        "unavailabilityId": 550000000,
+        "participantId": 1100000008,
+        "startTime": "1000",
+        "endTime": "1100"
+        }
+    ]
+}
+
+###
+//Invalid Participant ID
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 5550000000,
+        "unavailabilityId": 5500000001,
+        "participantId": 110000008,
+        "startTime": "1000",
+        "endTime": "1100"
+        }
+    ]
+}
+
+###
+//Invalid start time / end time
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 5550000000,
+        "unavailabilityId": 5500000001,
+        "participantId": 1100000008,
+        "startTime": "1500",
+        "endTime": "1100"
+        }
+    ]
+}
+
+
+###
+//Invalid start time / end time
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 5550000000,
+        "unavailabilityId": 5500000001,
+        "participantId": 1100000008,
+        "startTime": "10a0",
+        "endTime": "1100"
+        }
+    ]
+}
+
+
+########################### CHECK FOR EMPTY FIELDS ##########################
+###
+//Empty field(s)
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "unavailabilityId": 5500000001,
+        "participantId": 1100000008,
+        "startTime": "10a0",
+        "endTime": "1100"
+        }
+    ]
+}
+
+###
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 5550000000,
+        "participantId": 1100000008,
+        "startTime": "10a0",
+        "endTime": "1100"
+        }
+    ]
+}
+
+###
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 5550000000,
+        "unavailabilityId": 5500000001,
+        "startTime": "10a0",
+        "endTime": "1100"
+        }
+    ]
+}
+
+###
+POST http://localhost:3000/advance/insert? HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 5550000000,
+        "unavailabilityId": 5500000001,
+        "participantId": 1100000008,
+        "endTime": "1100"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+###Successful Calls
+GET http://localhost:3000/reset HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3000/basic/data?availabilityType=0 HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3000/basic/result?meetingId=1000000690&duration=60 HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3000/advance/result?meetingId=9990000002&fromTime=1000&toTime=1200 HTTP/1.1
+Content-Type: application/json
+
+###
+//Empty / Single Result
+

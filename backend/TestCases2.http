@@ -1,0 +1,14 @@
+### INVALID ADVANCE RESULT MEETING ID / FROM TIME / TO TIME / ALL ###
+GET http://localhost:3000/advance/result?meetingId=1110000001&fromTime=1700&toTime=1200 HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3000/advance/result?meetingId=1110000001&fromTime=1a00&toTime=1700 HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3000/advance/result?meetingId=1110000001&fromTime=1200&toTime=1a00 HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3000/advance/result?meetingId=1110000001&fromTime=1a00&toTime=1700 HTTP/1.1
+Content-Type: application/json
+
+##########################################################

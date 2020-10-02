@@ -1,0 +1,25 @@
+### INVALID GET DATA MEETING ID / PARTICIPANT ID / AVAILABILITY TYPE / ALL ###
+GET http://localhost:3000/basic/data?availabilityType=2 HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3000/basic/data?meetingId=10000000a0&participantId=1100000001 HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3000/basic/data?meetingId=1000000000&participantId=1100a00001 HTTP/1.1
+Content-Type: application/json
+
+### INVALID BASIC RESULT MEETING ID / DURATION / BOTH ###
+
+GET http://localhost:3000/basic/result?meetingId=111000001&duration=30 HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3000/basic/result?meetingId=111000a01&duration=30 HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3000/basic/result?meetingId=1110000001&duration=a0 HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3000/basic/result?meetingId=1110000001&duration=20000 HTTP/1.1
+Content-Type: application/json
+
+##########################################################

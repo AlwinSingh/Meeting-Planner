@@ -1,0 +1,148 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="./resultViewer.js" type="text/javascript"></script>
+
+    <title>Meeting Time Voter</title>
+</head>
+
+<body>
+    <!-- Loading -->
+    <div class="d-flex flex-row justify-content-center align-items-center" style="height: 100px;;">
+    <div id="webLoadSpinner" class="text-center">
+        <button class="btn btn-primary border-2 border-dark" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading meeting time voter
+        </button>
+    </div>
+    </div>
+
+    
+    <div class="container" style="display: none;">    
+
+        <div class="form-row text-center" style="margin-top: -50px;margin-bottom: 50px;">
+            <div class="col-12">
+                <button type="button" class="btn btn-dark customATeamButton btn-dataviewer" data-custom-value="dviewer">Data Viewer</button>
+                <button type="button" class="btn btn-dark customATeamButton btn-resultviewer disabled" data-custom-value="rviewer" disabled>Result Viewer</button>
+                <button type="button" class="btn btn-dark customATeamButton btn-switchresultviewer text-center" data-custom-value="computeAvailableData">Compute by Unavailability</button>
+            </div>
+         </div>
+
+        <!-- Changes page size -->
+        <p class="text-muted" style="font-size: 12px; margin-left: 15px; margin-bottom: 5px;">Page Size</p>
+        <div class="col-1 pageSize disabled" style="margin-bottom: -55px !important;">
+            <select fn="changePageSize" id="basic-result-page-size-select" class="custom-select borderRadius" onchange="updateResultTable()">
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+
+        <!-- Form filter (search bar to filter data) -->
+        <form id="form-filter" class="pt-3">
+            <div class="form-row">
+
+                <!-- Search Bar -->
+                <div class="col-3 ml-auto">
+                    <input id="meetingIdSearchBar" key='meetingId' type="number" class="form-control borderRadius pr-1 formSearchbar"
+                        placeholder="Input Meeting ID" onkeyup="checkInputFields()">
+                </div>
+                <div class="col-3">
+                    <input id="meetingDurationSearchBar" key='duration' type="number" class="form-control borderRadius formSearchbar"
+                        placeholder="Input Duration" onkeyup="checkInputFields()">
+                </div>
+                
+                <div class="px-2"></div>
+                <!-- Search & Reset button -->
+                <input id="searchButton" class="btn btn-dark customATeamButton px-4 disabled" type='submit' value='Search' disabled></input>
+                <div class="px-1"></div>
+                <button id="resetButton" class="btn btn-danger customATeamResetButton px-4 disabled" type="reset" value="Reset" disabled>Reset</button>
+            </div>
+        </form>
+
+        <!-- Error Message -->
+        <div class="dataErrMsg"></div>
+        
+        <!-- Table -->
+        <div class="table-outer pt-4">
+            <!-- Table to display data -->
+            <table class="table table-bordered table-hover text-center">
+                <!-- Table header -->
+                <thead class="tHeadDark">
+                    <tr>
+                        <th scope="col">Participant ID <i class="fa fa-user pl-2" aria-hidden="true"></i></th>
+                        <th scope="col">Meeting ID <i class="fa fa-users pl-2" aria-hidden="true"></i></i></th>
+                        <th scope="col">Duration (Minutes) <i class="fa fa-clock-o pl-2" aria-hidden="true"></i></th>
+                    </tr>
+                </thead>
+                <!-- Table body -->
+                <tbody id="result-tbody">
+                </tbody>
+
+            </table>
+        </div>
+
+        <p class="meetingTimeDisplay"></p>
+
+        <!-- Pagination -->
+        <div class="row pt-3">
+            <div class="mr-auto float-left pl-3" style="font-size: 15px;display: inline-block;">
+                <p id="currentDataDisplayed"></p>
+            </div>
+            <nav aria-label="Page navigation example" class="float-right ml-auto" style="display: inline-block;">
+                <ul class="pagination col-12 pl-5 ml-4">
+                    <li id="data-previous-page-btn" class="page-item disabled">
+                        <a value="-1" id="basic-result-previous-page" class="page-link" href="#"
+                            aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item dynamicPageNumber disabled" data-page-number="1">
+                        <a class="page-link dynamicPageNumberText"
+                            href="#">Page 1</a>
+                    </li>
+                    <!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                    <li id="data-next-page-btn" class="page-item disabled">
+                        <a value="1" id="basic-result-next-page" class="page-link" href="#"
+                            aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Button Goes to First Page -->
+        <br>
+        <button id="data-first-page-btn" style="display: inline-block;" class="btn btn-primary borderRadius float-right ml-auto disabled" id="jumpToFirstBtn">
+            <a fn="gotoFirstPage" id="basic-result-first-page" style="font-size: 14px;">Go to First Page</a>
+        </button>
+
+
+    </div>
+</body>
+
+</html>

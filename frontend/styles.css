@@ -1,0 +1,51 @@
+.borderRadius {
+    border-radius: 15px !important;
+}
+
+.disabled{
+    opacity: 0.5;
+    pointer-events:none !important;
+}
+
+.customATeamButton {
+    background: #141414;
+    background-image: linear-gradient(to bottom right, #141414, #353738);
+    border-radius: 10px;
+    padding: 10px 18px 10px;
+    border: medium none;
+    transition: all .5s;
+}
+
+.customATeamButton:hover {
+    background-image: linear-gradient(to top left, #141414, #353738);
+    transform: scale(0.95);
+}
+
+.customATeamResetButton {
+    background: #cf0e00;
+    background-image: linear-gradient(to bottom right, #cf0e00, #b00c00);
+    border-radius: 10px;
+    padding: 10px;
+    border: medium none;
+    transition: all .5s;
+}
+
+.customATeamResetButton:hover {
+    background-image: linear-gradient(to bottom right, #b00c00, #cf0e00);
+    transform: scale(0.95);
+    transition: all .5s;
+}
+
+.formSearchbar {
+    height: 44px;
+}
+
+.tHeadDark {
+    color: white;
+    background: #141414;
+    background-image: linear-gradient(to bottom, #141414, #353738) !important;
+}
+
+th {
+    font-weight: 600 !important;
+}

@@ -1,0 +1,130 @@
+###
+POST http://localhost:3000/basic/insert HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1120000000,
+        "participantId": 1200000055,
+        "startTime": "0010",
+        "endTime": "0800"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1130000001,
+        "participantId": 1200000056,
+        "startTime": "1350",
+        "endTime": "1800"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1140000002,
+        "participantId": 1200000057,
+        "startTime": "1350",
+        "endTime": "1800"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1150000003,
+        "participantId": 1200000058,
+        "startTime": "1350",
+        "endTime": "1800"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1150000004,
+        "participantId": 1200000059,
+        "startTime": "1450",
+        "endTime": "1700"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1150000005,
+        "participantId": 1200000060,
+        "startTime": "1450",
+        "endTime": "1700"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1150000006,
+        "participantId": 1200000061,
+        "startTime": "1450",
+        "endTime": "1700"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1150000007,
+        "participantId": 1200000062,
+        "startTime": "1450",
+        "endTime": "1700"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1150000008,
+        "participantId": 1200000063,
+        "startTime": "1450",
+        "endTime": "1700"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1150000009,
+        "participantId": 1200000064,
+        "startTime": "1450",
+        "endTime": "1700"
+        },
+        {
+        "meetingId": 1000000690,
+        "availabilityId": 1150000010,
+        "participantId": 1200000065,
+        "startTime": "1450",
+        "endTime": "1700"
+        }
+    ]
+}
+
+##ADVANCE RESULT VIEWER
+###
+POST http://localhost:3000/advance/insert HTTP/1.1
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "meetingId": 1000000691,
+        "unavailabilityId": 1120000000,
+        "participantId": 1200000080,
+        "startTime": "1000",
+        "endTime": "1100"
+        },
+        {
+        "meetingId": 1000000691,
+        "unavailabilityId": 1120000001,
+        "participantId": 1200000081,
+        "startTime": "1045",
+        "endTime": "1230"
+        },
+        {
+        "meetingId": 1000000691,
+        "unavailabilityId": 1120000002,
+        "participantId": 1200000082,
+        "startTime": "1030",
+        "endTime": "1200"
+        },
+        {
+        "meetingId": 1000000691,
+        "unavailabilityId": 1120000003,
+        "participantId": 1200000083,
+        "startTime": "1100",
+        "endTime": "1500"
+        },
+        {
+        "meetingId": 1000000691,
+        "unavailabilityId": 1120000004,
+        "participantId": 1200000084,
+        "startTime": "1600",
+        "endTime": "1700"
+        }
+    ]
+}
