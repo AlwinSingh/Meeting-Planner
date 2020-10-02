@@ -4,8 +4,8 @@
 
 ## Names:
 
-1. Alwin Singh (1935996)
-2. Choh Kaifeng (1935590)
+1. Alwin
+2. Kaifeng
 
 ##
 1. Github hosted frontend URL - https://ades-fsp.github.io/jibaboom-theateam/
