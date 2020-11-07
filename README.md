@@ -9,7 +9,7 @@
 ```
 
 
-------- Mobile App Screenshot --------
+
 ![Screenshot](ades1.PNG)\
 ![Screenshot](ades2.PNG)\
 ![Screenshot](ades3.PNG)\
