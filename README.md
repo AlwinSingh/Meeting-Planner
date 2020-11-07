@@ -1,11 +1,5 @@
 # JiBaBoom
-
 (Pair Programming Project)
-
-## Names:
-
-1. Alwin
-2. Kaifeng
 
 ##
 ```
