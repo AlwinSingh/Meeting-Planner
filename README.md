@@ -1,5 +1,5 @@
 # JiBaBoom
-(Pair Programming Project)
+A pair programming project that relies on Sort & Search Algorithms to provide meeting timings, identify time conflicts, in the most efficient manner
 
 ##
 ```
